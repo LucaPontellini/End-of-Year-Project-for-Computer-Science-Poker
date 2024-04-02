@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 15px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Regole del Poker</h1>
+
+<table>
+  <tr>
+    <th>Regola</th>
+    <th>Descrizione</th>
+  </tr>
+  <tr>
+    <td>Valore delle carte</td>
+    <td>
+      Le carte sono classificate in base al loro valore, in ordine crescente: 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack (J), Regina (Q), Re (K), Asso (A).<br>
+      L'Asso può valere sia 1 che 14, quindi le possibili scale sono:
+      <ul>
+        <li>Scala minima: Asso (1), 2, 3, 4, 5</li>
+        <li>Scala massima: 10, Jack (J), Regina (Q), Re (K), Asso (14)</li>
+      </ul>
+      I quattro semi sono cuori (♥), quadri (♦), fiori (♣) e picche (♠).
+      <br>
+      <!-- Carte di cuori -->
+      <p>Cuori (♥):</p>
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/cuori/01_hearts.png?raw=true" alt="Carta di cuori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/cuori/02_hearts.png?raw=true" alt="Carta di cuori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/cuori/03_hearts.png?raw=true" alt="Carta di cuori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/cuori/04_hearts.png?raw=true" alt="Carta di cuori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/cuori/05_hearts.png?raw=true" alt="Carta di cuori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/cuori/06_hearts.png?raw=true" alt="Carta di cuori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/cuori/07_hearts.png?raw=true" alt="Carta di cuori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/cuori/08_hearts.png?raw=true" alt="Carta di cuori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/cuori/09_hearts.png?raw=true" alt="Carta di cuori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/cuori/10_hearts.png?raw=true" alt="Carta di cuori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/cuori/11_hearts.png?raw=true" alt="Carta di cuori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/cuori/12_hearts.png?raw=true" alt="Carta di cuori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/cuori/13_hearts.png?raw=true" alt="Carta di cuori" width="100">
+      <br>
+      <!-- Carte di quadri -->
+      <p>Quadri (♦):</p>
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/quadri/01_diamonds.png?raw=true" alt="Carta di quadri" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/quadri/02_diamonds.png?raw=true" alt="Carta di quadri" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/quadri/03_diamonds.png?raw=true" alt="Carta di quadri" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/quadri/04_diamonds.png?raw=true" alt="Carta di quadri" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/quadri/05_diamonds.png?raw=true" alt="Carta di quadri" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/quadri/06_diamonds.png?raw=true" alt="Carta di quadri" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/quadri/07_diamonds.png?raw=true" alt="Carta di quadri" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/quadri/08_diamonds.png?raw=true" alt="Carta di quadri" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/quadri/09_diamonds.png?raw=true" alt="Carta di quadri" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/quadri/10_diamonds.png?raw=true" alt="Carta di quadri" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/quadri/11_diamonds.png?raw=true" alt="Carta di quadri" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/quadri/12_diamonds.png?raw=true" alt="Carta di quadri" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/quadri/13_diamonds.png?raw=true" alt="Carta di quadri" width="100">
+      <br>
+      <p>Fiori (♣):</p>
+      <!-- Carte di fiori -->
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/fiori/01_clubs.png?raw=true" alt="Carta di fiori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/fiori/02_clubs.png?raw=true" alt="Carta di fiori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/fiori/03_clubs.png?raw=true" alt="Carta di fiori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/fiori/04_clubs.png?raw=true" alt="Carta di fiori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/fiori/05_clubs.png?raw=true" alt="Carta di fiori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/fiori/06_clubs.png?raw=true" alt="Carta di fiori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/fiori/07_clubs.png?raw=true" alt="Carta di fiori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/fiori/08_clubs.png?raw=true" alt="Carta di fiori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/fiori/09_clubs.png?raw=true" alt="Carta di fiori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/fiori/10_clubs.png?raw=true" alt="Carta di fiori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/fiori/11_clubs.png?raw=true" alt="Carta di fiori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/fiori/12_clubs.png?raw=true" alt="Carta di fiori" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/fiori/13_clubs.png?raw=true" alt="Carta di fiori" width="100">
+      <br>
+      <p>Picche (♠):</p>
+      <!-- Carte di picche -->
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/picche/01_spades.png?raw=true" alt="Carta di picche" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/picche/02_spades.png?raw=true" alt="Carta di picche" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/picche/03_spades.png?raw=true" alt="Carta di picche" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/picche/04_spades.png?raw=true" alt="Carta di picche" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/picche/05_spades.png?raw=true" alt="Carta di picche" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/picche/06_spades.png?raw=true" alt="Carta di picche" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/picche/07_spades.png?raw=true" alt="Carta di picche" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/picche/08_spades.png?raw=true" alt="Carta di picche" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/picche/09_spades.png?raw=true" alt="Carta di picche" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/picche/10_spades.png?raw=true" alt="Carta di picche" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/picche/11_spades.png?raw=true" alt="Carta di picche" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/picche/12_spades.png?raw=true" alt="Carta di picche" width="100">
+      <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/foto_delle_carte/picche/13_spades.png?raw=true" alt="Carta di picche" width="100">
+      <br>
+    </td>
+  </tr>
+  <tr>
+    <td>Classificazione delle mani</td>
+    <td>
+      <ul>
+        <li>Coppia: Due carte dello stesso valore.</li>
+        <li>Doppia coppia: Due coppie di carte.</li>
+        <li>Tris: Tre carte dello stesso valore.</li>
+        <li>Scala: Cinque carte consecutive (ad esempio, 2-3-4-5-6).</li>
+        <li>Colore: Cinque carte dello stesso seme.</li>
+        <li>Full: Una coppia più un tris.</li>
+        <li>Poker: Quattro carte dello stesso valore.</li>
+        <li>Scala reale: Scala dall’asso al dieci dello stesso seme.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Distribuzione delle carte</td>
+    <td>Ogni giocatore riceve due carte coperte (le “hole cards”). Segue una fase di scommesse.</td>
+  </tr>
+  <tr>
+    <td>Scommesse</td>
+    <td>
+      <ul>
+        <li>Check: Passare il turno senza scommettere.</li>
+        <li>Bet: Scommettere una certa quantità di chip.</li>
+        <li>Call: Pareggiare la scommessa di un altro giocatore.</li>
+        <li>Raise: Aumentare la scommessa.</li>
+        <li>Fold: Abbandonare la mano.</li>
+      </ul>
+      Vengono distribuite tre carte scoperte sul tavolo (il “flop”). Altre due carte scoperte vengono distribuite una alla volta (il “turn” e il “river”). I giocatori cercano di formare la migliore mano possibile utilizzando le loro hole cards e le carte comuni sul tavolo.
+    </td>
+  </tr>
+  <tr>
+    <td>Vincitore</td>
+    <td>Alla fine del round di scommesse, i giocatori mostrano le loro carte. Vince il giocatore con la mano più alta secondo la classificazione sopra.</td>
+  </tr>
+</table>
+
+</body>
+</html>
