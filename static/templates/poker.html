@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Carte dell'utente -->
+        <div class="player-cards">
+            {% for card in user_cards %}
+                <img src="{{ url_for('static', filename='cards/' + card) }}" alt="Card">
+            {% endfor %}
+        </div>
+
+        <!-- Carte del dealer -->
+        <div class="dealer-cards">
+            {% for card in dealer_cards %}
+                <img src="{{ url_for('static', filename='cards/' + card) }}" alt="Card">
+            {% endfor %}
+        </div>
+
+        <!-- Carte comunitarie -->
+        <div class="community-cards">
+            {% for card in community_cards %}
+                <img src="{{ url_for('static', filename='cards/' + card) }}" alt="Card">
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

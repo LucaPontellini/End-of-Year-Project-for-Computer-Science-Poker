@@ -1,0 +1,27 @@
+.container {
+    position: relative;
+}
+
+.player-cards, .dealer-cards, .community-cards {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.player-cards {
+    left: 10%;
+}
+
+.dealer-cards {
+    right: 10%;
+}
+
+.community-cards {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+img {
+    width: 100px; /* Imposta la dimensione delle carte */
+    margin-right: 10px; /* Aggiungi spazio tra le carte */
+}

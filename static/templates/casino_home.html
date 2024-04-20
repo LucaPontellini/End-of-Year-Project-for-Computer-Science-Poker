@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Casino Games</title>
+    <style>
+        body {
+            background-image: url("https://raw.githubusercontent.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/0dfcca463bb8ffcbfb46fa98cb0db712ce1f83f7/interno_Casin%C3%B2.jpg");
+            background-size: cover;
+            background-color: rgba(36, 36, 36, 0.4);
+            backdrop-filter: blur(7px);
+        }
+        .games {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .game {
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .game img {
+            width: 100%;
+        }
+        .game p {
+            color: gold;
+        }
+        .game button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" src="{{ url_for('static', filename='Musica_per_il_Poker/Jazzy Smile.mp3') }}" controls loop></audio>
+    <div class="games">
+        <div class="game">
+            <img src="https://raw.githubusercontent.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/fb0746bbd072d7937a03a15983a541fd871e763c/foto_dei_giochi_del_Casin%C3%B2/blackjack.jpg" alt="Blackjack">
+            <p>Blackjack</p>
+            <button onclick="alert('The selected game is not yet added. It is under development.')">Play</button>
+        </div>
+        <div class="game">
+            <img src="https://raw.githubusercontent.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/fb0746bbd072d7937a03a15983a541fd871e763c/foto_dei_giochi_del_Casin%C3%B2/caribbean%20stud%20poker.jpg" alt="Caribbean Stud Poker">
+            <p>Caribbean Stud Poker</p>
+            <button onclick="alert('The selected game is not yet added. It is under development.')">Play</button>
+        </div>
+        <div class="game">
+            <img src="https://raw.githubusercontent.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/fb0746bbd072d7937a03a15983a541fd871e763c/foto_dei_giochi_del_Casin%C3%B2/crabs.jpg" alt="Craps">
+            <p>Craps</p>
+            <button onclick="alert('The selected game is not yet added. It is under development.')">Play</button>
+        </div>
+        <div class="game">
+            <img src="https://raw.githubusercontent.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/fb0746bbd072d7937a03a15983a541fd871e763c/foto_dei_giochi_del_Casin%C3%B2/poker%20texas%20holdem.jpg" alt="Poker Texas Holdem">
+            <p>Poker Texas Hold'em</p>
+            <button onclick="window.location.href='{{ url_for('poker_rules') }}'">Play</button>
+        </div>
+        <div class="game">
+            <img src="https://raw.githubusercontent.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/fb0746bbd072d7937a03a15983a541fd871e763c/foto_dei_giochi_del_Casin%C3%B2/roulette.jpg" alt="Roulette">
+            <p>Roulette</p>
+            <button onclick="alert('The selected game is not yet added. It is under development.')">Play</button>
+        </div>
+        <div class="game">
+            <img src="https://raw.githubusercontent.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/fb0746bbd072d7937a03a15983a541fd871e763c/foto_dei_giochi_del_Casin%C3%B2/slot%20machine.jpg" alt="Slot Machine">
+            <p>Slot Machine</p>
+            <button onclick="alert('The selected game is not yet added. It is under development.')">Play</button>
+        </div>
+        <div class="game">
+            <img src="https://raw.githubusercontent.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/fb0746bbd072d7937a03a15983a541fd871e763c/foto_dei_giochi_del_Casin%C3%B2/video%20poker.jpg" alt="Video Poker">
+            <p>Video Poker</p>
+            <button onclick="alert('The selected game is not yet added. It is under development.')">Play</button>
+        </div>
+        <div class="game cashier">
+            <img src="https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/raw/main/cassiere.webp" alt="Cashier">
+            <p>Cashier</p>
+            <button onclick="window.location.href='{{ url_for('cashier_dashboard') }}'">Go to the Cashier</button>
+        </div>        
+    </div>
+
+    <script>
+        // Funzione per avviare la musica
+        function playBackgroundMusic() {
+            var backgroundMusic = document.getElementById('background-music');
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+            }
+        }
+
+        // Avvia la musica quando la pagina viene caricata
+        window.addEventListener('load', playBackgroundMusic);
+    </script>
+</body>
+</html>
