@@ -165,26 +165,30 @@
                     <input type="submit" value="Convert">
                 </form>
             </section>
+            
+            <!-- Form per la riconversione di tutte le fiches in denaro -->
             <section>
-                <!-- Form per la conversione da fiches a denaro -->
-                <form action="/convert_to_money" method="post">
-                    <label for="chip-color-reconvert">Select the color of chips to reconvert:</label><br>
-                    <select id="chip-color-reconvert" name="chip-color">
-                        {% for chip_color, chip_value in value_of_chips.items() %}
-                        <option value="{{ chip_color }}">{{ chip_color }}</option>
-                        {% endfor %}
-                    </select><br>
-                    <label for="quantity">Enter the quantity of chips to reconvert:</label><br>
-                    <input type="number" id="quantity" name="quantity" min="0"><br>
-                    <input type="submit" value="Reconvert">
+                <form action="/reconvert" method="post">
+                    <p>Click the button below to convert all chips back to money.</p>
+                    <input type="submit" value="Reconvert All Chips">
                 </form>
             </section>
+            
             <!-- Form per aggiornare il denaro totale -->
             <section>
-                <form action="/cashier" method="post">
-                    <label for="total-money">Update Total Money:</label><br>
+                <form action="/update_total_money" method="post">
+                    <label for="total-money">Aggiorna Denaro Totale:</label><br>
                     <input type="number" id="total-money" name="total_money" min="0"><br>
-                    <input type="submit" value="Update">
+                    <input type="hidden" id="remaining-money" name="remaining_money" value="{{ total_money }}">
+                    <input type="submit" value="Aggiorna">
+                </form>
+            </section>
+            
+            <!-- Form per cancellare tutti i dati -->
+            <section>
+                <form action="/clear_all_data" method="post">
+                    <p>Click the button below to clear all data.</p>
+                    <input type="submit" value="Clear All Data">
                 </form>
             </section>
         </main>

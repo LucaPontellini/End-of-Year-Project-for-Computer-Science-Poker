@@ -6,7 +6,6 @@
     <title>User Dashboard</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
     <style>
-        /* Stili CSS */
         body {
             background-image: url("https://raw.githubusercontent.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/698ff918c21ddab187f4c742cdb88c69f075dc41/cashier.jpg");
             background-size: cover;
@@ -110,6 +109,7 @@
         </header>
         <main>
             <table>
+                <!-- Tabella dell'utente -->
                 <thead>
                     <tr>
                         <th>Color</th>
@@ -135,15 +135,19 @@
                     </tr>
                     <tr>
                         <td colspan="3" style="text-align: right;"><strong>Remaining Money:</strong></td>
-                        <td>{% if remaining_money == 0 %}$0{% else %}${{ remaining_money }}{% endif %}</td>
+                        <td>{% if remaining_money is defined and remaining_money != 0 %}${{ remaining_money }}{% else %}$0{% endif %}</td>
                     </tr>
                 </tfoot>
             </table>
-            <form action="/clear_all_data" method="post">
-                <input type="submit" value="Clear All Data">
+
+            <!-- Pulsante per tornare alla tabella del cassiere -->
+            <form action="/cashier_dashboard" method="get" style="margin-top: 20px;">
+                <input type="submit" value="Back to Cashier Dashboard">
             </form>
-            <form action="/cashier" method="get" style="margin-top: 20px;">
-                <input type="submit" value="Back to Cashier">
+
+            <!-- Pulsante per riconvertire le fiches in denaro -->
+            <form action="/reconvert" method="post" style="margin-top: 20px;">
+                <input type="submit" value="Reconvert Chips to Money">
             </form>
         </main>
     </div>
