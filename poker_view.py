@@ -184,7 +184,7 @@ def play():
         else:
             return "Errore: Il file JSON non esiste."
     else:
-        return render_template('play.html')
+        return render_template('poker.html')
 
 # Funzione per la rotta '/cashier'
 @app.route('/cashier', methods=['GET', 'POST'])
