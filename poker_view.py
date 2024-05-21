@@ -361,12 +361,12 @@ def clear_all_data():
                 data["remaining_money"] = 0
                 f.seek(0)
                 json.dump(data, f, indent=4)
-            return redirect(url_for('cashier_dashboard'))
+            return redirect(url_for('cashier_operation'))
         except json.decoder.JSONDecodeError as e:
             return f"Errore: Impossibile decodificare il file JSON - {str(e)}"
     else:
         create_or_update_data()
-        return redirect(url_for('cashier_dashboard'))
+        return redirect(url_for('cashier_operation'))
 
 @app.route('/cashier_dashboard', methods=['GET', 'POST'])
 def cashier_dashboard_page():
