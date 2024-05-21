@@ -6,9 +6,9 @@ app = Flask(__name__)
 def index():
 
     # Assegnazione delle carte
-    user_cards = ["https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/main/static/foto_delle_carte/quadri/04_diamonds.png", "KH.png"]  # L'utente ha l'asso di picche e il re di cuori
-    dealer_cards = ["5C.png", "JD.png"]  # Il dealer ha il 5 di fiori e il fante di quadri
-    community_cards = ["7D.png", "8S.png", "9H.png", "TC.png", "QD.png"]  # Le carte comunitarie
+    user_cards = ["01_spades.png", "13_hearts.png"]  # L'utente ha l'asso di picche e il re di cuori
+    dealer_cards = ["05_clubs.png", "11_diamonds.png"]  # Il dealer ha il 5 di fiori e il fante di quadri
+    community_cards = ["07_diamonds.png", "08_spades.png", "09_hearts.png", "11_hearts.png", "12_diamonds.png"]  # Le carte comunitarie
     
     # Rendering del template HTML
     return render_template('poker.html', user_cards=user_cards, dealer_cards=dealer_cards, community_cards=community_cards)
