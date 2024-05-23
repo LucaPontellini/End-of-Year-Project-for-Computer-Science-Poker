@@ -27,5 +27,17 @@
             margin: 5px;
         }
     </style>
+    <script>
+        // Funzione per avviare la musica
+        function playBackgroundMusic() {
+            var backgroundMusic = document.getElementById('background-music');
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+            }
+        }
+
+        // Avvia la musica quando la pagina viene caricata
+        window.addEventListener('load', playBackgroundMusic);
+    </script>
 </head>
 </html>
