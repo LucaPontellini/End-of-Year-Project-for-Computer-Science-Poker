@@ -1,5 +1,5 @@
 body {
-    background-image: url('static/immagine_Casino.jpg');
+    background-image: url('https://raw.githubusercontent.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/700d9bad00c86ef360e6ca830fd87626bc08fd61/immagine_Casino.jpg');
     background-size: cover;
     text-align: center;
     color: black;
@@ -56,7 +56,7 @@ h1 {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: url('static/immagine_Casino.jpg') center/cover no-repeat;
+    background: url('https://raw.githubusercontent.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/700d9bad00c86ef360e6ca830fd87626bc08fd61/immagine_Casino.jpg') center/cover no-repeat;
     z-index: 2;
 }
 
