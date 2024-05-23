@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <body style="background-image: url('{{ url_for('static', filename='tavolo_poker_con_mano.png') }}'); background-size: cover;"></body>
 <div style="position: relative; top: 50px; left: 100px;">
     {% for card in user_cards %}
@@ -14,3 +16,4 @@
         <img src="{{ url_for('static', filename=card) }}" alt="Card" style="position: absolute; top: {{ loop.index0 * 30 }}px;">
     {% endfor %}
 </div>
+</html>
