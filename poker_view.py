@@ -180,7 +180,7 @@ def play():
         data = read_data()
         if data:
             value_of_chips = data["value_of_chips"]
-            return render_template('generic_game.html', value_of_chips=value_of_chips)
+            return render_template('play.html', value_of_chips=value_of_chips)
         else:
             return "Errore: Il file JSON non esiste."
     else:
