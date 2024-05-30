@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
+    <!-- c'è un errore nello sfondo della pagina: background-image: url('static/tavolo_poker_con_mano.png') -->
+    <!-- il link di dov'è l'immagine da usare è: https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/13ca2f7f69974e9efc45c16fb2903a04d7d80fe2/static/tavolo_poker_con_mano.png -->
+    <style> /* la parte css di questo file va traferito in un file css esterno a quello HTML */
         body {
             background-image: url('static/tavolo_poker_con_mano.png');
             background-repeat: no-repeat;
@@ -27,7 +29,10 @@
             margin: 5px;
         }
     </style>
-    <audio id="background-music" src="{{ url_for('static', filename='Musica_per_il_Poker/Welcome to New Orleans.mp3') }}" controls loop></audio>
+    <audio id="background-music" src="{{ url_for('static', filename='Musica_per_il_Poker/Welcome to New Orleans.mp3') }}" controls loop></audio> 
+    <!-- c'è un errore nella musica di sottofondo: https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/13ca2f7f69974e9efc45c16fb2903a04d7d80fe2/static/Musica_per_il_Poker/Welcome%20to%20New%20Orleans.mp3 -->
+    <!-- c'è un errore nella musica di sottofondo: https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/13ca2f7f69974e9efc45c16fb2903a04d7d80fe2/static/Musica_per_il_Poker/Two%20Cigarettes%2C%20Please.mp3 -->
+    <!-- bisogna trovare un modo per sentirle entrambe: prima si deve sentire Welcome to New Orleans e poi Two Cigarettes Please -->
     <script>
         // Funzione per avviare la musica
         function playBackgroundMusic() {
@@ -40,5 +45,29 @@
         // Avvia la musica quando la pagina viene caricata
         window.addEventListener('load', playBackgroundMusic);
     </script>
+    <!-- Script JavaScript per il controllo della musica -->
+    <!-- <script>
+        // Funzione per avviare la musica
+        function playBackgroundMusic() {
+            var backgroundMusic = document.getElementById('background-music');
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+            }
+        }
+
+        // Funzione per fermare la musica
+        function pauseBackgroundMusic() {
+            var backgroundMusic = document.getElementById('background-music');
+            backgroundMusic.pause();
+        }
+
+        // Avvia la musica quando la pagina viene caricata
+        window.addEventListener('load', playBackgroundMusic);
+
+        // Ferma la musica quando l'utente lascia la pagina
+        window.addEventListener('unload', pauseBackgroundMusic);
+    </script> -->
+    
+    <!-- verificare se si utilizza lo stesso approccio per Javascript degli altri file per vedere se l'errore si riscontra o meno -->
 </head>
 </html>

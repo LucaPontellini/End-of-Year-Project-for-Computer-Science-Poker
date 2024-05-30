@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casino Cashier</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
-    <style>
+    <style> /* la parte css di questo file va traferito in un file css esterno a quello HTML */
         body {
             background-image: url("static/cashier.jpg");
             background-size: cover;
@@ -180,6 +180,9 @@
                     <label for="total-money">Aggiorna Denaro Totale:</label><br>
                     <input type="number" id="total-money" name="total_money" min="0"><br>
                     <input type="hidden" id="remaining-money" name="remaining_money" value="{{ total_money }}">
+                    <!-- potrebbe essere questo il punto in cui c'è l'errore per aggiornare il denaro totale e quello rimasto con la stessa cifra la prima volta -->
+                    <!-- quando si aggiorna il denaro totale, le due caselle del "denaro totale" e del "denaro rimasto" devono avere la stessa quantità di denaro -->
+                    <!-- successivamente il "denaro totale" rimarrà invariato ed il "denaro rimasto" cambierà visto che i soldi cambieranno a seconda della tipologia di fiches che l'utente sceglie -->
                     <input type="submit" value="Aggiorna">
                 </form>
             </section>
