@@ -14,4 +14,4 @@ def index():
     return render_template('poker.html', user_cards=user_cards, dealer_cards=dealer_cards, community_cards=community_cards)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) 
