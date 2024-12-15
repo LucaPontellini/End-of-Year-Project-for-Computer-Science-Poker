@@ -36,7 +36,7 @@
     </style>
 </head>
 <body>
-    <audio id="background-music" src="{{ url_for('static', filename='Musica_per_il_Poker/Jazzy Smile.mp3') }}" controls loop hidden></audio>
+    <audio id="background-music" src="{{ url_for('static', filename='Musica_per_il_Poker/Jazzy Smile.mp3') }}" controls loop hidden autoplay></audio>
     <div class="games">
         <div class="game">
             <img src="static/foto_dei_giochi_del_Casinò/blackjack.jpg" alt="Blackjack">
@@ -92,10 +92,10 @@
         // Avvia la musica quando la pagina viene caricata
         window.addEventListener('load', playBackgroundMusic);
 
-        // Rileva quando l'utente torna indietro e reindirizza alla pagina return_to_casino_home.html
+        // Rileva quando l'utente torna indietro e riprende la riproduzione della musica
         window.addEventListener('pageshow', function(event) {
             if (event.persisted) {
-                window.location.href = 'return_to_casino_home.html';
+                playBackgroundMusic();
             }
         });
     </script>

@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- c'è un errore nello sfondo della pagina: background-image: url('static/tavolo_poker_con_mano.png') -->
-    <!-- il link di dov'è l'immagine da usare è: https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/13ca2f7f69974e9efc45c16fb2903a04d7d80fe2/static/tavolo_poker_con_mano.png -->
-    <style> /* la parte css di questo file va traferito in un file css esterno a quello HTML */
+    <style>
         body {
-            background-image: url('static/tavolo_poker_con_mano.png');
+            background-image: url('{{ url_for('static', filename='tavolo_Texas_Holdem.jpg') }}');
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
@@ -29,10 +27,7 @@
             margin: 5px;
         }
     </style>
-    <audio id="background-music" src="{{ url_for('static', filename='Musica_per_il_Poker/Welcome to New Orleans.mp3') }}" controls loop></audio> 
-    <!-- c'è un errore nella musica di sottofondo: https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/13ca2f7f69974e9efc45c16fb2903a04d7d80fe2/static/Musica_per_il_Poker/Welcome%20to%20New%20Orleans.mp3 -->
-    <!-- c'è un errore nella musica di sottofondo: https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/13ca2f7f69974e9efc45c16fb2903a04d7d80fe2/static/Musica_per_il_Poker/Two%20Cigarettes%2C%20Please.mp3 -->
-    <!-- bisogna trovare un modo per sentirle entrambe: prima si deve sentire Welcome to New Orleans e poi Two Cigarettes Please -->
+    <audio id="background-music" src="{{ url_for('static', filename='Musica_per_il_Poker/Welcome to New Orleans.mp3') }}" controls loop hidden></audio>
     <script>
         // Funzione per avviare la musica
         function playBackgroundMusic() {
@@ -44,30 +39,35 @@
 
         // Avvia la musica quando la pagina viene caricata
         window.addEventListener('load', playBackgroundMusic);
+
+        // Cambia la musica di sottofondo dopo che la prima traccia è finita
+        var backgroundMusic = document.getElementById('background-music');
+        backgroundMusic.addEventListener('ended', function() {
+            backgroundMusic.src = "{{ url_for('static', filename='Musica_per_il_Poker/Two Cigarettes, Please.mp3') }}";
+            backgroundMusic.play();
+        });
     </script>
-    <!-- Script JavaScript per il controllo della musica -->
-    <!-- <script>
-        // Funzione per avviare la musica
-        function playBackgroundMusic() {
-            var backgroundMusic = document.getElementById('background-music');
-            if (backgroundMusic.paused) {
-                backgroundMusic.play();
-            }
-        }
-
-        // Funzione per fermare la musica
-        function pauseBackgroundMusic() {
-            var backgroundMusic = document.getElementById('background-music');
-            backgroundMusic.pause();
-        }
-
-        // Avvia la musica quando la pagina viene caricata
-        window.addEventListener('load', playBackgroundMusic);
-
-        // Ferma la musica quando l'utente lascia la pagina
-        window.addEventListener('unload', pauseBackgroundMusic);
-    </script> -->
-    
-    <!-- verificare se si utilizza lo stesso approccio per Javascript degli altri file per vedere se l'errore si riscontra o meno -->
 </head>
+<body>
+    <div class="cards-container">
+        <!-- Le carte dell'utente -->
+        <div style="position: relative; top: 50px; left: 100px;">
+            {% for card in user_cards %}
+                <img src="{{ url_for('static', filename=card) }}" alt="Card" class="card" style="position: absolute; top: {{ loop.index0 * 30 }}px;">
+            {% endfor %}
+        </div>
+        <!-- Le carte del dealer (mostra solo il dorso) -->
+        <div style="position: relative; top: 150px; left: 100px;">
+            {% for card in dealer_cards %}
+                <img src="{{ url_for('static', filename='back_of_card.png') }}" alt="Card" class="card" style="position: absolute; top: {{ loop.index0 * 30 }}px;">
+            {% endfor %}
+        </div>
+        <!-- Le carte della community -->
+        <div style="position: relative; top: 250px; left: 100px;">
+            {% for card in community_cards %}
+                <img src="{{ url_for('static', filename=card) }}" alt="Card" class="card" style="position: absolute; top: {{ loop.index0 * 30 }}px;">
+            {% endfor %}
+        </div>
+    </div>
+</body>
 </html>

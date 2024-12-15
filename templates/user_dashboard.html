@@ -96,11 +96,15 @@
         select#chip-color option, select#chip-color-reconvert option {
             height: 30px;
         }
+
+        audio#background-music {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <!-- Elemento audio per la musica -->
-    <audio id="background-music" src="{{ url_for('static', filename='Musica_per_il_Poker/Jazzy Smile.mp3') }}" controls loop></audio>
+    <audio id="background-music" src="{{ url_for('static', filename='Musica_per_il_Poker/Jazzy Smile.mp3') }}" controls loop hidden></audio>
 
     <div class="overlay"></div>
     <div class="content-wrapper">
@@ -162,17 +166,15 @@
             }
         }
 
-        // Funzione per fermare la musica
-        function pauseBackgroundMusic() {
-            var backgroundMusic = document.getElementById('background-music');
-            backgroundMusic.pause();
-        }
-
         // Avvia la musica quando la pagina viene caricata
         window.addEventListener('load', playBackgroundMusic);
 
-        // Ferma la musica quando l'utente lascia la pagina
-        window.addEventListener('unload', pauseBackgroundMusic);
+        // Rileva quando l'utente torna indietro e riprende la riproduzione della musica
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                playBackgroundMusic();
+            }
+        });
     </script>
 </body>
 </html>

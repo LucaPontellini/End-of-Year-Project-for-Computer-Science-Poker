@@ -78,7 +78,7 @@
 
         select#chip-color, select#chip-color-reconvert {
             width: 100%;
-            height: 30px;
+            height: 40px;
             background-color: transparent;
             border: none;
             border-bottom: 1px solid black;
@@ -102,11 +102,35 @@
             background-color: #4CAF50;
             margin-bottom: 20px;
         }
+
+        .chip-select {
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            border: 1px solid red;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        audio#background-music {
+            display: none;
+        }
     </style>    
 </head>
 <body>
     <!-- Elemento audio per la musica -->
-    <audio id="background-music" src="{{ url_for('static', filename='Musica_per_il_Poker/Jazzy Smile.mp3') }}" controls loop></audio>
+    <audio id="background-music" src="{{ url_for('static', filename='Musica_per_il_Poker/Jazzy Smile.mp3') }}" controls loop hidden></audio>
 
     <div class="overlay"></div>
     <div class="content-wrapper">
@@ -117,6 +141,9 @@
             </form>
         </header>
         <main>
+            {% if error_message %}
+            <div class="error-message">{{ error_message }}</div>
+            {% endif %}
             <table>
                 <thead>
                     <tr>
@@ -156,8 +183,8 @@
                 <form action="/convert_to_chips" method="post">
                     <label for="amount">Enter the amount to convert to chips:</label>
                     <input type="number" id="amount" name="amount" min="0"><br>
-                    <label for="chip-color">Select the color of chips you want:</label>
-                    <select id="chip-color" name="chip-color">
+                    <select id="chip-color" name="chip-color" class="chip-select">
+                        <option value="" disabled selected>Select the color of chips you want:</option>
                         {% for chip_color, chip_value in value_of_chips.items() %}
                         <option value="{{ chip_color }}">{{ chip_color }}</option>
                         {% endfor %}
@@ -177,13 +204,10 @@
             <!-- Form per aggiornare il denaro totale -->
             <section>
                 <form action="/update_total_money" method="post">
-                    <label for="total-money">Aggiorna Denaro Totale:</label><br>
+                    <input type="hidden" id="remaining-money" name="remaining_money" value="{{ remaining_money }}">
+                    <label for="total-money">Update Total Money:</label><br>
                     <input type="number" id="total-money" name="total_money" min="0"><br>
-                    <input type="hidden" id="remaining-money" name="remaining_money" value="{{ total_money }}">
-                    <!-- potrebbe essere questo il punto in cui c'è l'errore per aggiornare il denaro totale e quello rimasto con la stessa cifra la prima volta -->
-                    <!-- quando si aggiorna il denaro totale, le due caselle del "denaro totale" e del "denaro rimasto" devono avere la stessa quantità di denaro -->
-                    <!-- successivamente il "denaro totale" rimarrà invariato ed il "denaro rimasto" cambierà visto che i soldi cambieranno a seconda della tipologia di fiches che l'utente sceglie -->
-                    <input type="submit" value="Aggiorna">
+                    <input type="submit" value="Update">
                 </form>
             </section>
             
@@ -204,6 +228,13 @@
 
     <!-- Script JavaScript per il controllo della musica -->
     <script>
+        setTimeout(function() {
+            var errorMessage = document.querySelector('.error-message');
+            if (errorMessage) {
+                errorMessage.style.display = 'none';
+            }
+        }, 5000);
+
         // Funzione per avviare la musica
         function playBackgroundMusic() {
             var backgroundMusic = document.getElementById('background-music');
@@ -212,17 +243,15 @@
             }
         }
 
-        // Funzione per fermare la musica
-        function pauseBackgroundMusic() {
-            var backgroundMusic = document.getElementById('background-music');
-            backgroundMusic.pause();
-        }
-
         // Avvia la musica quando la pagina viene caricata
         window.addEventListener('load', playBackgroundMusic);
 
-        // Ferma la musica quando l'utente lascia la pagina
-        window.addEventListener('unload', pauseBackgroundMusic);
+        // Rileva quando l'utente torna indietro e riprende la riproduzione della musica
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                playBackgroundMusic();
+            }
+        });
     </script>
 </body>
 </html>
