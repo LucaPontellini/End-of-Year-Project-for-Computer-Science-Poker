@@ -37,5 +37,3 @@ You can explore the project [here](https://github.com/LucaPontellini/End-of-Year
 ---
 
 Enjoy your game! 🎉
-
----
