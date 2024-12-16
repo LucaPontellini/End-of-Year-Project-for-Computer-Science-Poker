@@ -5,7 +5,7 @@
         body {
             background-image: url('{{ url_for('static', filename='tavolo_Texas_Holdem.jpg') }}');
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: cover;
             background-position: center;
             margin: 0;
             padding: 0;
@@ -27,6 +27,28 @@
             margin: 5px;
         }
     </style>
+</head>
+<body style="background-image: url('{{ url_for('static', filename='tavolo_Texas_Holdem.jpg') }}'); background-size: cover;">
+    <div class="cards-container">
+        <!-- Le carte dell'utente -->
+        <div style="position: relative; top: 50px; left: 100px;">
+            {% for card in user_cards %}
+                <img src="{{ url_for('static', filename=card) }}" alt="Card" style="position: absolute; top: {{ loop.index0 * 30 }}px; max-width: 50px;">
+            {% endfor %}
+        </div>
+        <!-- Le carte del dealer -->
+        <div style="position: relative; top: 150px; left: 100px;">
+            {% for card in dealer_cards %}
+                <img src="{{ url_for('static', filename=card) }}" alt="Card" style="position: absolute; top: {{ loop.index0 * 30 }}px; max-width: 50px;">
+            {% endfor %}
+        </div>
+        <!-- Le carte della community -->
+        <div style="position: relative; top: 250px; left: 100px;">
+            {% for card in community_cards %}
+                <img src="{{ url_for('static', filename=card) }}" alt="Card" style="position: absolute; top: {{ loop.index0 * 30 }}px; max-width: 50px;">
+            {% endfor %}
+        </div>
+    </div>
     <audio id="background-music" src="{{ url_for('static', filename='Musica_per_il_Poker/Welcome to New Orleans.mp3') }}" controls loop hidden></audio>
     <script>
         // Funzione per avviare la musica
@@ -47,27 +69,5 @@
             backgroundMusic.play();
         });
     </script>
-</head>
-<body>
-    <div class="cards-container">
-        <!-- Le carte dell'utente -->
-        <div style="position: relative; top: 50px; left: 100px;">
-            {% for card in user_cards %}
-                <img src="{{ url_for('static', filename=card) }}" alt="Card" class="card" style="position: absolute; top: {{ loop.index0 * 30 }}px;">
-            {% endfor %}
-        </div>
-        <!-- Le carte del dealer (mostra solo il dorso) -->
-        <div style="position: relative; top: 150px; left: 100px;">
-            {% for card in dealer_cards %}
-                <img src="{{ url_for('static', filename='back_of_card.png') }}" alt="Card" class="card" style="position: absolute; top: {{ loop.index0 * 30 }}px;">
-            {% endfor %}
-        </div>
-        <!-- Le carte della community -->
-        <div style="position: relative; top: 250px; left: 100px;">
-            {% for card in community_cards %}
-                <img src="{{ url_for('static', filename=card) }}" alt="Card" class="card" style="position: absolute; top: {{ loop.index0 * 30 }}px;">
-            {% endfor %}
-        </div>
-    </div>
 </body>
 </html>
