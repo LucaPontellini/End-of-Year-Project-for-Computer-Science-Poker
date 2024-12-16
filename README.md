@@ -1,5 +1,3 @@
----
-
 🎲 **End-of-Year Project for Computer Science: Casino** 🃏
 
 Welcome to an interactive implementation of a casino, crafted with Python 🐍, HTML 📝, CSS 🎨, JavaScript 💻, and Flask 🌶️. This project is a comprehensive end-of-year endeavor for the Computer Science course, designed to provide an engaging and visually appealing gaming experience.
