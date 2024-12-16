@@ -12,8 +12,8 @@ Welcome to an interactive implementation of a casino, crafted with Python 🐍, 
 
 🃏 Game Availability: Currently, the poker game is the only one available. More casino games will be added in the future.
 
-🚀 Getting Started: To start the program, simply run the file [![casino.py](https://img.shields.io/badge/casino.py-brightgreen)](https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-/blob/8564d7bf2b64a139bba020c2b050f47c6a91d4e1/casino.py) from the terminal. The first thing you'll see is the project cover, introducing you to the entire casino environment.
+🚀 Getting Started: To start the program, simply run the file [![here](https://img.shields.io/badge/here-blue)](https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-.git) from the terminal. The first thing you'll see is the project cover, introducing you to the entire casino environment.
 
-You can explore the project [![here](https://img.shields.io/badge/here-blue)](https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-.git).
+You can explore the project [here](https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker-.git).
 
 Enjoy your game! 🎉
