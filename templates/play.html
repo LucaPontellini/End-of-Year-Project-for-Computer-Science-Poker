@@ -3,7 +3,6 @@
 <head>
     <style>
         body {
-            background-image: url('{{ url_for('static', filename='tavolo_Texas_Holdem.jpg') }}');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -48,6 +47,7 @@
                 <img src="{{ url_for('static', filename=card) }}" alt="Card" style="position: absolute; top: {{ loop.index0 * 30 }}px; max-width: 50px;">
             {% endfor %}
         </div>
+        <div>testx</div>
     </div>
     <audio id="background-music" src="{{ url_for('static', filename='Musica_per_il_Poker/Welcome to New Orleans.mp3') }}" controls loop hidden></audio>
     <script>

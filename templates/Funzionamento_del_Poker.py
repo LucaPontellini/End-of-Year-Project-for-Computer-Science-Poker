@@ -1,6 +1,15 @@
 import os
 import random
 from tabulate import tabulate
+import logging
+
+# Setup basic logging to terminal
+logging.basicConfig(
+    level=logging.WARNING,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+
 
 def deck_creation(seeds: list, values_of_cards: list) -> list[dict]:
     """This function creates the deck"""
@@ -10,39 +19,60 @@ def deck_creation(seeds: list, values_of_cards: list) -> list[dict]:
             deck.append({"seed": seed, "value": value})
     return deck
 
+
 def deck_shuffle(deck):
     """This feature shuffles the deck"""
     for _ in range(random.randint(10, 15)):
         random.shuffle(deck)
     return deck
 
-def draw_card(deck: list[dict]) -> dict: # type: ignore
+
+def draw_card(deck: list[dict]) -> dict:  # type: ignore
     """This function draws a card from the deck"""
     if len(deck) > 0:
         card = deck.pop(0)
         print(card)
         return card
 
+
 def get_random_card(suit):
     return f"{suit}/{random.randint(1, 13):02d}_{suit}.png"
 
+
 def create_cards(card_images_folder, suits):
-    user_cards = [f"{card_images_folder}/{get_random_card(random.choice(suits))}" for _ in range(2)]
-    dealer_cards = [f"{card_images_folder}/{get_random_card(random.choice(suits))}" for _ in range(2)]
-    community_cards = [f"{card_images_folder}/{get_random_card(random.choice(suits))}" for _ in range(5)]
+    user_cards = [
+        f"{card_images_folder}/{get_random_card(random.choice(suits))}"
+        for _ in range(2)
+    ]
+    dealer_cards = [
+        f"{card_images_folder}/{get_random_card(random.choice(suits))}"
+        for _ in range(2)
+    ]
+    community_cards = [
+        f"{card_images_folder}/{get_random_card(random.choice(suits))}"
+        for _ in range(5)
+    ]
+    logging.info(
+        f"Cards: User:{user_cards}, Dealer:{dealer_cards}, Community:{community_cards}"
+    )
+    logging.info("-" * 50)
     return user_cards, dealer_cards, community_cards
+
 
 def chip_table(value_of_chips) -> list:
     """This feature creates and prints a poker chip table"""
     chips_list = []
     for color, value in value_of_chips.items():
         chips_list.append([color, value])
-    print(tabulate(chips_list, headers=['Color', 'Value'], tablefmt='grid'))
+    print(tabulate(chips_list, headers=["Color", "Value"], tablefmt="grid"))
     return chips_list
+
 
 def cashier(value_of_chips) -> dict:
     """This function collects the number of each color of poker chips from the user"""
-    total_money = float(input("Enter the total amount of money you want to convert to chips: "))
+    total_money = float(
+        input("Enter the total amount of money you want to convert to chips: ")
+    )
     remaining_money = total_money
     chips_dict = {}
     for color in value_of_chips.keys():
@@ -55,14 +85,23 @@ def cashier(value_of_chips) -> dict:
                 chips_dict[color] = num_chips
                 break
             else:
-                print("You don't have enough money for that many chips. Please enter a smaller number.")
-    print(tabulate([[color, number] for color, number in chips_dict.items()], headers=['Color', 'Number'], tablefmt='grid'))
+                print(
+                    "You don't have enough money for that many chips. Please enter a smaller number."
+                )
+    print(
+        tabulate(
+            [[color, number] for color, number in chips_dict.items()],
+            headers=["Color", "Number"],
+            tablefmt="grid",
+        )
+    )
     print(f"You have ${remaining_money} remaining.")
-    return chips_dict, remaining_money # type: ignore
+    return chips_dict, remaining_money  # type: ignore
+
 
 def display_user_table(chips_dict, remaining_money, value_of_chips):
     """This function displays the user's chips and remaining money in a table"""
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("cls" if os.name == "nt" else "clear")
     user_table = []
     total_money = remaining_money
     for color, number in chips_dict.items():
@@ -71,7 +110,8 @@ def display_user_table(chips_dict, remaining_money, value_of_chips):
         user_table.append([color, number, f"${number * chip_value}"])
     user_table.append(["Total", "", f"${total_money}"])
     user_table.append(["Remaining Money", "", f"${remaining_money}"])
-    print(tabulate(user_table, headers=['Color', 'Number', 'Value'], tablefmt='grid'))
+    print(tabulate(user_table, headers=["Color", "Number", "Value"], tablefmt="grid"))
+
 
 def convert_back(chips_dict, value_of_chips):
     """This function converts chips back to money"""
@@ -82,9 +122,10 @@ def convert_back(chips_dict, value_of_chips):
     print(f"You have converted your chips back to ${total_money}.")
     return total_money
 
+
 def main():
-    seeds = ['hearts', 'diamonds', 'clubs', 'spades']
-    values_of_cards = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+    seeds = ["hearts", "diamonds", "clubs", "spades"]
+    values_of_cards = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
     deck = deck_creation(seeds, values_of_cards)
     deck = deck_shuffle(deck)
     value_of_chips = {
@@ -96,7 +137,7 @@ def main():
         "Purple": "$500",
         "Yellow": "$1000",
         "Pink": "$5000",
-        "Light Blue": "$10000"
+        "Light Blue": "$10000",
     }
     while True:
         convert_money = input("Do you want to convert money to chips? (Yes/No) ")
@@ -110,6 +151,7 @@ def main():
             break
         else:
             print("Please answer with 'Yes' or 'No'.")
+
 
 if __name__ == "__main__":
     main()
