@@ -19,8 +19,8 @@
         "purple": 0,
         "yellow": 0,
         "pink": 0,
-        "light blue": 0
+        "light blue": 1
     },
-    "total_money": 0,
+    "total_money": 10000,
     "remaining_money": 0
 }
