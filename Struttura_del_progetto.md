@@ -1,7 +1,9 @@
 ## Struttura del progetto:
 
 La seguente struttura rappresenta l’organizzazione attuale del progetto End-of-Year-Project-for-Computer-Science-Poker.
-La struttura è stata progettata per essere funzionale, ma presenta alcune aree di disorganizzazione che potrebbero essere migliorate in futuro.
+La struttura è stata progettata per essere funzionale, ma presenta alcune aree di disorganizzazione che potrebbero essere migliorate in futuro. 
+Inoltre, oltre alle criticità già presenti nel codice, l’intero progetto presenta una significativa incoerenza nella nomenclatura dei file: alcuni sono in italiano, altri in inglese, e in diversi casi le due lingue vengono mescolate. 
+Questa mancanza di uniformità linguistica rende più difficile orientarsi nella struttura e compromette la leggibilità complessiva del progetto.
 
 ```text
 End-of-Year-Project-for-Computer-Science-Poker/
