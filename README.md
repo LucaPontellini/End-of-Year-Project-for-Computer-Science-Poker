@@ -36,8 +36,6 @@ You can explore the project [here](https://github.com/LucaPontellini/End-of-Year
 
 ---
 
-Enjoy your game! 🎉
-
 ### 📁 Project Structure
 
 For a detailed view of the project structure, see: [Struttura_del_progetto.md](https://github.com/LucaPontellini/End-of-Year-Project-for-Computer-Science-Poker/blob/a2c881c2a599daa29b0ec27f66c2328796c6d442/Struttura_del_progetto.md)
@@ -53,3 +51,7 @@ For now, you can run the main file with:
 ```bash
 python casino.py
 ```
+
+---
+
+Enjoy your game! 🎉
