@@ -93,7 +93,7 @@ End-of-Year-Project-for-Computer-Science-Poker/
 │   │       └── 13_spades.png                   # Immagine del Re di picche.
 │   │
 │   └── Musica_per_il_Poker/                    # Contiene i file audio utilizzati come sottofondo musicale per le pagine del casinò e del poker, 
-│                                                 oltre a versioni compresse in formato ZIP. 
+│       │                                         oltre a versioni compresse in formato ZIP. 
 │       ├── Invisible Cities.mp3                # Sottofondo musicale per la pagina di copertina del progetto, con un'atmosfera misteriosa e coinvolgente.
 │       ├── Jazzy Smile.mp3                     # Sottofondo musicale per la pagina principale del casinò, con un ritmo rilassante e sofisticato che richiama l'atmosfera 
 │       │                                         di un casinò elegante.
